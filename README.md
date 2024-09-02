@@ -1,23 +1,3 @@
-## Application Details
-|               |
-| ------------- |
-|**Generation Date and Time**<br>Mon Sep 02 2024 19:24:07 GMT+0000 (Coordinated Universal Time)|
-|**App Generator**<br>@sap/generator-fiori-freestyle|
-|**App Generator Version**<br>1.14.5|
-|**Generation Platform**<br>SAP Business Application Studio|
-|**Template Used**<br>simple|
-|**Service Type**<br>SAP System (ABAP On Premise)|
-|**Service URL**<br>http://vhcala4hci:50000/sap/opu/odata/sap/ZMKE_TRAIN_01_SRV|
-|**Module Name**<br>train01|
-|**Application Title**<br>Training with SOH &amp; IFL|
-|**Namespace**<br>training|
-|**UI5 Theme**<br>sap_horizon|
-|**UI5 Version**<br>1.108.19|
-|**Enable Code Assist Libraries**<br>False|
-|**Enable TypeScript**<br>False|
-|**Add Eslint configuration**<br>False|
-
-## train01
 # Purpose
 Training with SOH &amp; IFL
 
@@ -38,8 +18,26 @@ Running local SAP Backend system with SSC (Sap Cloud Connect) to BTP Frontend, d
 
 	-  https://go.support.sap.com/minisap/#/minisap 
 
+## Application Details
+|               |
+| ------------- |
+|**Generation Date and Time**<br>Mon Sep 02 2024 19:24:07 GMT+0000 (Coordinated Universal Time)|
+|**App Generator**<br>@sap/generator-fiori-freestyle|
+|**App Generator Version**<br>1.14.5|
+|**Generation Platform**<br>SAP Business Application Studio|
+|**Template Used**<br>simple|
+|**Service Type**<br>SAP System (ABAP On Premise)|
+|**Service URL**<br>http://vhcala4hci:50000/sap/opu/odata/sap/ZMKE_TRAIN_01_SRV|
+|**Module Name**<br>train01|
+|**Application Title**<br>Training with SOH &amp; IFL|
+|**Namespace**<br>training|
+|**UI5 Theme**<br>sap_horizon|
+|**UI5 Version**<br>1.108.19|
+|**Enable Code Assist Libraries**<br>False|
+|**Enable TypeScript**<br>False|
+|**Add Eslint configuration**<br>False|
 
-
+## train01
 
 ### Starting the generated app
 
