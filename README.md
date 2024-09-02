@@ -21,6 +21,24 @@
 
 Training with SOH &amp; IFL
 
+A4H SAP SERVER TRIAL VERSION 2022  
+
+	1. SAP ABAP CLOUD DEVELOPER TRIAL
+	2. DOCKER + CONTAINER + SAP BACKEND DB
+
+	- https://learning.sap.com/learning-journeys/connecting-sap-btp-and-on-premise-systems-using-the-cloud-connector/monitoring-cloud-connector_a84a0698-ac74-40a5-b084-064b102a722c
+
+	- https://hub.docker.com/r/sapse/abap-cloud-developer-trial
+
+	- https://community.sap.com/t5/application-development-blog-posts/abap-platform-trial-1909-available-now/ba-p/13567855/page/2#comments
+
+	- https://hub.docker.com/r/sapse/abap-cloud-developer-trial#before-you-pull-the-image
+
+	-  https://go.support.sap.com/minisap/#/minisap 
+
+https://tools.hana.ondemand.com/#cloud![Uploading image.png…]()
+
+
 ### Starting the generated app
 
 -   This app has been generated using the SAP Fiori tools - App Generator, as part of the SAP Fiori tools suite.  In order to launch the generated app, simply run the following from the generated app root folder:
