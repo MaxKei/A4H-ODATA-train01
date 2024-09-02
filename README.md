@@ -5,8 +5,8 @@ Training with SOH &amp; IFL
 Running local SAP Backend system with SSC (Sap Cloud Connect) to BTP Frontend, developing standard CRUD-Q operations. 
 
 ### LINKS 
-	1. SAP ABAP CLOUD DEVELOPER TRIAL
-	2. DOCKER + CONTAINER + SAP BACKEND DB
+	## SAP BACKEND ABAP DB, TRIAL SERVER
+	
 
 	- https://learning.sap.com/learning-journeys/connecting-sap-btp-and-on-premise-systems-using-the-cloud-connector/monitoring-cloud-connector_a84a0698-ac74-40a5-b084-064b102a722c
 
