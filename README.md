@@ -21,8 +21,10 @@
 
 Training with SOH &amp; IFL
 
-A4H SAP SERVER TRIAL VERSION 2022  
+A4H SAP SERVER TRIAL VERSION 2022 INTEGRATED WITH DOCKER CONTAINER.
+Running local SAP Backend system with SSC (Sap Cloud Connect) to BTP Frontend, developing standard CRUD-Q operations. 
 
+### LINKS 
 	1. SAP ABAP CLOUD DEVELOPER TRIAL
 	2. DOCKER + CONTAINER + SAP BACKEND DB
 
@@ -36,7 +38,7 @@ A4H SAP SERVER TRIAL VERSION 2022
 
 	-  https://go.support.sap.com/minisap/#/minisap 
 
-https://tools.hana.ondemand.com/#cloud![Uploading image.png…]()
+
 
 
 ### Starting the generated app
