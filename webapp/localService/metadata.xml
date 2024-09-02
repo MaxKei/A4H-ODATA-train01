@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZMKE_TRAIN_01_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Order" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CustId"/>
+                    <PropertyRef Name="OrderId"/>
+                </Key>
+                <Property Name="CustId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Customer ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="OrderId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Order ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CreatedAt" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ChangedAt" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CustomerName" Type="Edm.String" Nullable="false" MaxLength="70" sap:unicode="false" sap:label="Customer" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Deleted" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Deleted" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CreatedBy" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Created By" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DeletedTimestamp" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ChangedBy" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Changed By" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CustomerId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Customer ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DeletedBy" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="DeletedBy" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ActionResp" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="OrderId"/>
+                </Key>
+                <Property Name="OrderId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Order ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Message" Type="Edm.String" MaxLength="255" sap:unicode="false" sap:label="Response Message" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Status" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Customer" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CustId"/>
+                </Key>
+                <Property Name="CustId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="ZCUSTOMERID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CustName" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Char" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ToOrders" Relationship="ZMKE_TRAIN_01_SRV.CustomerToOrders" FromRole="FromRole_CustomerToOrders" ToRole="ToRole_CustomerToOrders"/>
+            </EntityType>
+            <Association Name="CustomerToOrders" sap:content-version="1">
+                <End Type="ZMKE_TRAIN_01_SRV.Customer" Multiplicity="1" Role="FromRole_CustomerToOrders"/>
+                <End Type="ZMKE_TRAIN_01_SRV.Order" Multiplicity="*" Role="ToRole_CustomerToOrders"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_CustomerToOrders">
+                        <PropertyRef Name="CustId"/>
+                    </Principal>
+                    <Dependent Role="ToRole_CustomerToOrders">
+                        <PropertyRef Name="CustomerId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZMKE_TRAIN_01_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="OrderSet01" EntityType="ZMKE_TRAIN_01_SRV.Order" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ActionRespCollection" EntityType="ZMKE_TRAIN_01_SRV.ActionResp" sap:content-version="1"/>
+                <EntitySet Name="CustomerSet" EntityType="ZMKE_TRAIN_01_SRV.Customer" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <AssociationSet Name="CustomerToOrdersSet" Association="ZMKE_TRAIN_01_SRV.CustomerToOrders" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="CustomerSet" Role="FromRole_CustomerToOrders"/>
+                    <End EntitySet="OrderSet01" Role="ToRole_CustomerToOrders"/>
+                </AssociationSet>
+                <FunctionImport Name="ApproveOrder" ReturnType="ZMKE_TRAIN_01_SRV.ActionResp" EntitySet="ActionRespCollection" m:HttpMethod="POST">
+                    <Parameter Name="OrderId" Type="Edm.String" Mode="In" MaxLength="10" sap:label="Order ID"/>
+                </FunctionImport>
+                <FunctionImport Name="RejectOrder" ReturnType="ZMKE_TRAIN_01_SRV.ActionResp" EntitySet="ActionRespCollection" m:HttpMethod="POST">
+                    <Parameter Name="OrderId" Type="Edm.String" Mode="In" MaxLength="10" sap:label="Order ID"/>
+                </FunctionImport>
+            </EntityContainer>
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <atom:link rel="self" href="http://vhcala4hci:50000/sap/opu/odata/sap/ZMKE_TRAIN_01_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://vhcala4hci:50000/sap/opu/odata/sap/ZMKE_TRAIN_01_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
