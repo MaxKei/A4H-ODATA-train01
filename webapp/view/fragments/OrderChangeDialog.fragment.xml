@@ -1,19 +1,19 @@
 <core:FragmentDefinition
 	xmlns="sap.m"
 	xmlns:core="sap.ui.core" >
-	<Dialog id="idOrderChangeDialog1" title="Order {OrdersModel>/OrderChangeData/OrderId}" >
-		<VBox id="idOrderChangeVBoxWrapper44" class="sapUiSmallMargin">
-			<HBox id="idOrderChangeDelDateHBox33" alignItems="Center" justifyContent="SpaceBetween">
-				<Label id="idOrderChangeDelDateLabel22" text="Delivery Date"/>
+	<Dialog id="idOrderChangeDialog" title="Order {OrdersModel>/OrderChangeData/OrderId}" >
+		<VBox id="idOrderChangeVBoxWrapper" class="sapUiSmallMargin">
+			<HBox id="idOrderChangeDelDateHBox" alignItems="Center" justifyContent="SpaceBetween">
+				<Label id="idOrderChangeDelDateLabel" text="Delivery Date"/>
 				<DatePicker 
-					id="idOrderChangeDelDatePicker1" width="150px" 
+					id="idOrderChangeDelDatePicker" width="150px" 
 					value="{path: 'OrdersModel>/OrderChangeData/DeliveryDate', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd/MM/yyyy', strictParsing: true , UTC: true}}"/>
 			</HBox>        
 		</VBox>
 		<buttons>
-			<Button id="idOrderChangeSaveBtn2"
+			<Button id="idOrderChangeSaveBtn"
 				text="Save" type="Emphasized" press="onSaveChangeOrder"/>
-			<Button id="idOrderChangeCloseBtn3" 
+			<Button id="idOrderChangeCloseBtn" 
                 text="Close" press="onCloseDialog"/>
 		</buttons>
 	</Dialog>
