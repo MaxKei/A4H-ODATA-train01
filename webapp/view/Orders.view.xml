@@ -1,7 +1,65 @@
 <mvc:View controllerName="training.train01.controller.Orders"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:core="sap.ui.core" 
+    displayBlock="true">
+
     <Page id="page" title="{i18n>title}">
-        <content />
+        <content>
+            <Text id="idHelloWorld" text="Halløjsa Verden"/>
+            <Table id="idOrdersTable"
+                items="{
+                    path: '/OrderSet01',
+                    sorter: {
+                        path: 'OrderId'
+                    }
+                }">
+                <columns>
+                    <Column id="idOrdTableColHdrOrder" width="12em">
+                        <Text id="idOrdTableColHdrOrderText" text="Order ID" />
+                    </Column>
+                    <Column id="idOrdTableColHdrDelDate" width="12em">
+                        <Text id="idOrdTableColHdrDelDateText" text="Delivery Date" />
+                    </Column>
+                    <Column id="idOrdTableColHdrCustomer" >
+                        <Text id="idOrdTableColHdrCustomerText" text="Customer" />
+                    </Column>
+                    <Column id="idOrdTableColHdrStatus" >
+                        <Text id="idOrdTableColHdrStatusText" text="Status" />
+                    </Column>
+                    <Column id="idOrdTableColHdrActions" width="5rem">
+                        <Text id="idOrdTableColHdrActionsText" text="Actions" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="idOrdTableColumnListItem" vAlign="Middle">
+                        <cells>
+                            <ObjectIdentifier id="idOrdTableColValueOrder"
+                                title="{OrderId}"
+                                text="{OrderDesc}"/>
+                            <Text id="idOrdTableColValueDelDate" 
+                                text="{ path: 'DeliveryDate', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd/MM/yyyy' } }"/>
+                                
+                            <Text id="idOrdTableColValueCustomer" text="{CustName} ({CustId})"/>
+                            
+
+                            <Text id="idOrdTableColValueStatus" text="{StatusDesc}"/>
+                            
+                            <HBox id="idOrdTableColValueActionsHBox" alignItems="Center" >
+                                <core:Icon id="idOrdTableColValueActionsApproveIcon" 
+                                    src="sap-icon://accept" color="green" press="onOrderApprove" size="20px"
+                                    visible="{= ${StatusId} === 'INITIAL'}"/>
+                                <core:Icon id="idOrdTableColValueActionsRejectIcon" class="sapUiTinyMarginBegin"
+                                    src="sap-icon://decline" color="red" press="onOrderReject" size="20px"
+                                    visible="{path: 'StatusId', formatter: '.isStatusInitial'}"/>
+                                <core:Icon id="idOrdTableColValueActionsChangeIcon" class="sapUiTinyMarginBegin"
+                                    src="sap-icon://user-edit" color="black" press="onOrderChange" size="20px"
+                                    visible="{= ${StatusId} === 'REJECTED'}"/>
+                            </HBox>
+                         </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>            
+        </content>
     </Page>
 </mvc:View>

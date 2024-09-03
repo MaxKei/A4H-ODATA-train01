@@ -1,0 +1,20 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core" >
+	<Dialog id="idOrderChangeDialog1" title="Order {OrdersModel>/OrderChangeData/OrderId}" >
+		<VBox id="idOrderChangeVBoxWrapper44" class="sapUiSmallMargin">
+			<HBox id="idOrderChangeDelDateHBox33" alignItems="Center" justifyContent="SpaceBetween">
+				<Label id="idOrderChangeDelDateLabel22" text="Delivery Date"/>
+				<DatePicker 
+					id="idOrderChangeDelDatePicker1" width="150px" 
+					value="{path: 'OrdersModel>/OrderChangeData/DeliveryDate', type: 'sap.ui.model.type.Date', formatOptions: {pattern: 'dd/MM/yyyy', strictParsing: true , UTC: true}}"/>
+			</HBox>        
+		</VBox>
+		<buttons>
+			<Button id="idOrderChangeSaveBtn2"
+				text="Save" type="Emphasized" press="onSaveChangeOrder"/>
+			<Button id="idOrderChangeCloseBtn3" 
+                text="Close" press="onCloseDialog"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>        
